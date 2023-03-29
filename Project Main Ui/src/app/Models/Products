@@ -1,0 +1,13 @@
+export interface product{
+    productId:number,
+    name:string,
+    description:string,
+    categoryId:number,
+    price:number,
+    imageName:string,
+    category:any
+
+
+
+}
+

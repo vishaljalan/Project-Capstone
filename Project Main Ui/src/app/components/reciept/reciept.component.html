@@ -1,0 +1,22 @@
+
+<body>
+  <div class="receipt">
+    <h1><strong> Thanks for shopping with us!</strong></h1>
+    <h2>Order Details</h2>
+    <p>Order ID: {{ orderDetails.id }}</p>
+    <p>Name: {{ orderDetails.name }}</p>
+    <p>Email: {{ orderDetails.email }}</p>
+    <p>Address: {{ orderDetails.address }}</p>
+    <hr>
+    <h2>Products:</h2>
+    <ul>
+      <li *ngFor="let product of orderDetails.products">
+        {{ product.name }} - {{ product.price|currency:'INR' }}
+      </li>
+      <li>{{orderDetails.total|currency:'INR'}}</li>
+    </ul>
+    <hr>
+    <button class="btn-continue" routerLink="/home">Continue shopping</button>
+  </div>
+</body>
+

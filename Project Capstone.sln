@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserMicroservice", "UserMicroservice\UserMicroservice.csproj", "{3362F9BD-B067-4B9D-B3CC-E819C15B8967}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductMicroservice", "ProductMicroservice\ProductMicroservice.csproj", "{E69CF139-821D-4AD5-99F2-FEDF3B8238F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartMicroservice", "CartMicroservice\CartMicroservice.csproj", "{F0D59D6C-F47A-4A22-B0DF-420E739F9AF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{B59D3BB9-73D3-4B79-A172-15E69783A8CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MongoMicroservice", "MongoMicroservice\MongoMicroservice.csproj", "{39BE83CA-EDDC-4FCB-B55E-3E678EA2F061}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerilogLib", "SerilogLib\SerilogLib.csproj", "{45266B1E-CFBC-4318-AD7A-C8D833653398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestECommerceProject", "TestECommerceProject\TestECommerceProject.csproj", "{3D9D2745-459A-4A68-9115-30BDCD5C3AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3362F9BD-B067-4B9D-B3CC-E819C15B8967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3362F9BD-B067-4B9D-B3CC-E819C15B8967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3362F9BD-B067-4B9D-B3CC-E819C15B8967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3362F9BD-B067-4B9D-B3CC-E819C15B8967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E69CF139-821D-4AD5-99F2-FEDF3B8238F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E69CF139-821D-4AD5-99F2-FEDF3B8238F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E69CF139-821D-4AD5-99F2-FEDF3B8238F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E69CF139-821D-4AD5-99F2-FEDF3B8238F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0D59D6C-F47A-4A22-B0DF-420E739F9AF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0D59D6C-F47A-4A22-B0DF-420E739F9AF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0D59D6C-F47A-4A22-B0DF-420E739F9AF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0D59D6C-F47A-4A22-B0DF-420E739F9AF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59D3BB9-73D3-4B79-A172-15E69783A8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59D3BB9-73D3-4B79-A172-15E69783A8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59D3BB9-73D3-4B79-A172-15E69783A8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59D3BB9-73D3-4B79-A172-15E69783A8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39BE83CA-EDDC-4FCB-B55E-3E678EA2F061}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39BE83CA-EDDC-4FCB-B55E-3E678EA2F061}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39BE83CA-EDDC-4FCB-B55E-3E678EA2F061}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39BE83CA-EDDC-4FCB-B55E-3E678EA2F061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45266B1E-CFBC-4318-AD7A-C8D833653398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45266B1E-CFBC-4318-AD7A-C8D833653398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45266B1E-CFBC-4318-AD7A-C8D833653398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45266B1E-CFBC-4318-AD7A-C8D833653398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D9D2745-459A-4A68-9115-30BDCD5C3AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9D2745-459A-4A68-9115-30BDCD5C3AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9D2745-459A-4A68-9115-30BDCD5C3AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9D2745-459A-4A68-9115-30BDCD5C3AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F90074B0-2F27-46FE-9C57-869E19B503A9}
+	EndGlobalSection
+EndGlobal

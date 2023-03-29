@@ -1,0 +1,122 @@
+
+
+
+    
+        
+
+<body>
+
+
+  <div class="body1">
+    
+        <video controls autoplay muted loop>
+      <source src="assets\01-hd01-DM-Series-kv-pc-1440x640.webm"
+        type="video/mp4">
+
+        
+      Your browser does not support the video tag.
+    </video>
+    <div id="category">
+
+
+      <div class="round-category" (click)="navigateToCategory(1)">
+        <img 
+          src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+          alt="Category Image" >
+  
+      </div>
+      <div class="round-category" (click)="navigateToCategory(2)">
+        <img
+          src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+          alt="Category Image">
+  
+      </div>
+      <div class="round-category" (click)="navigateToCategory(3)">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676212689512-5b66701912d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="Category Image">
+  
+      </div>
+      <div class="round-category" (click)="navigateToCategory(4)">
+        <img
+          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+          alt="Category Image">
+  
+      </div>
+      <div class="round-category" (click)="navigateToCategory(5)">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+          alt="Category Image">
+  
+      </div>
+    </div>
+      
+      <div id="products" >
+        
+
+
+        <div  class="card-container">
+        <div *ngFor="let product of productsList" style="margin-right: 1rem;">
+          <mat-card class="example-card">
+              
+              <img mat-card-image src="https://source.unsplash.com/random/500x500?{{product.name}}" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                  <div>
+                      <h2>
+                          {{product.name}}
+                      </h2>
+                     
+                  </div>
+                  <div>
+                      <p>
+                          Description
+                      </p>
+                      
+                  </div>
+                <div>
+                  <h3 class="text-success"> {{product.price | currency:'INR'}}
+                      
+                      
+                  </h3>
+                  
+                 
+                </div>
+                
+              </mat-card-content>
+              <mat-card-actions >
+                  <div> 
+                <button mat-raised-button class="btn-outline-success" [routerLink]="['/products',product.productId]">View Product</button>
+              </div>
+              </mat-card-actions>
+             
+            </mat-card>
+            
+          </div>
+        </div>
+      </div>
+
+     
+    
+
+    
+
+
+
+              
+              
+    
+               
+            
+
+
+   
+   
+  
+
+    
+    
+
+
+
+
+

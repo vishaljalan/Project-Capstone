@@ -1,0 +1,296 @@
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 500px;
+      margin-top: 200px;
+      padding: 100px;
+    }
+
+    main {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .login-card {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: -100px;
+      width: auto;
+      padding: 0;
+    }
+
+    .login-title {
+      background-color: #333;
+      color: #fff;
+      padding: 16px;
+      font-size: 24px;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+    }
+
+    .login-card-content {
+      padding: 24px;
+    
+    }
+
+    mat-form-field {
+      display: block;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      outline: none;
+      
+    }
+
+    mat-error {
+      color: #f44336;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    mat-radio-group {
+      display: flex;
+      justify-content: center;
+      margin: 8px 0;
+    }
+
+    mat-radio-button {
+      margin-right: 16px;
+    }
+
+    .login-button-container {
+      display: flex;
+      justify-content: center;
+      
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      
+    }
+
+    button:hover {
+      background-color: #333;
+    }
+
+    button:disabled {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+ 
+  <main>
+    <mat-card class="login-card" style="background-color: #777;">
+      <mat-card-title class="login-title">Sign Up</mat-card-title>
+      <mat-card-content>
+        <form #loginForm="ngForm">
+          <mat-form-field>
+            <input matInput placeholder="Email" name="email" [(ngModel)]="user.Email" required email>
+            <mat-error *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['email'].errors?.['email']">Please enter a valid email address</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="user.Password" required minlength="6">
+            <mat-error *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="First Name" name="firstName" [(ngModel)]="user.FirstName" required minlength="2">
+            <mat-error *ngIf="loginForm.controls['firstName'].errors?.['required']">First name is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['firstName'].errors?.['minlength']">First name must be at least 2 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Last Name" name="lastName" [(ngModel)]="user.LastName" required minlength="2">
+            <mat-error *ngIf="loginForm.controls['lastName'].errors?.['required']">Last name is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['lastName'].errors?.['minlength']">Last name must be at least 2 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Username" name="username" [(ngModel)]="user.Username" required minlength="4">
+            <mat-error *ngIf="loginForm.controls['username'].errors?.['required']">Username is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['username'].errors?.['minlength']">Username must be at least 4 characters</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Phone Number" name="phoneNumber" [(ngModel)]="user.PhoneNumber" required pattern="[0-9]{10}">
+            <mat-error *ngIf="loginForm.controls['phoneNumber'].errors?.['required']">Phone number is required</mat-error>
+            <mat-error *ngIf="loginForm.controls['phoneNumber'].errors?.['pattern']">Please enter a valid 10 digit phone number</mat-error>
+          </mat-form-field>
+          <mat-radio-group [(ngModel)]="user.Role" name="role" style="color: black;" required>
+            <mat-radio-button value="Admin" style="color: black;">Admin</mat-radio-button>
+            <mat-radio-button value="User" style="color: black;">User</mat-radio-button>
+          </mat-radio-group>
+          <div class="login-button-container">
+            <button  (click)="onSubmit()" [disabled]="!loginForm.valid"><button type="submit" class="btn btn-primary">Submit</button></button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+    </main>
+</body>
+</html> -->
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up Form</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/@angular/material@12.2.5/core/theming/prebuilt/indigo-pink.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <mat-card>
+        <mat-card-title>
+          
+        </mat-card-title>
+        <mat-card-subtitle>
+          <br>
+          <br>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <form #loginForm="ngForm">
+            <div class="input-group">
+              <mat-form-field>
+                <input matInput placeholder="Email" name="email" [(ngModel)]="user.Email" required email>
+                <mat-error *ngIf="loginForm.controls['email'].errors?.['required']">Email is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['email'].errors?.['email']">Please enter a valid email address</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="user.Password" required minlength="6">
+                <mat-error *ngIf="loginForm.controls['password'].errors?.['required']">Password is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input-group">
+              <mat-form-field>
+                <input matInput placeholder="First Name" name="firstName" [(ngModel)]="user.FirstName" required minlength="2">
+                <mat-error *ngIf="loginForm.controls['firstName'].errors?.['required']">First name is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['firstName'].errors?.['minlength']">First name must be at least 2 characters</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Last Name" name="lastName" [(ngModel)]="user.LastName" required minlength="2">
+                <mat-error *ngIf="loginForm.controls['lastName'].errors?.['required']">Last name is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['lastName'].errors?.['minlength']">Last name must be at least 2 characters</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input-group">
+              <mat-form-field>
+                <input matInput placeholder="Username" name="username" [(ngModel)]="user.Username" required minlength="4">
+                <mat-error *ngIf="loginForm.controls['username'].errors?.['required']">Username is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['username'].errors?.['minlength']">Username must be at least 4 characters</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Phone Number" name="phoneNumber" [(ngModel)]="user.PhoneNumber" required pattern="[0-9]{10}">
+                <mat-error *ngIf="loginForm.controls['phoneNumber'].errors?.['required']">Phone number is required</mat-error>
+                <mat-error *ngIf="loginForm.controls['phoneNumber'].errors?.['pattern']">Please enter a valid 10 digit phone number</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input-group">
+              <mat-radio-group [(ngModel)]="user.Role" name="role" style="color: black;" required>
+                <mat-radio-button value="Admin">Admin</mat-radio-button>
+                <mat-radio-button value="User">User</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="submit-button">
+              <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!loginForm.valid">Submit</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </main>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 16px;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-group > mat-form-field {
+      flex: 1;
+      margin-right: 8px;
+    }
+
+    .input-group > mat-form-field:last-child {
+      margin-right: 0;
+    }
+
+    .submit-button {
+      margin-top: 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  </style>
+</body>
+</html>
+    
+
+

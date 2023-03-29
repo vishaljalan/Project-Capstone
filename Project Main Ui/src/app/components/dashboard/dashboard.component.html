@@ -1,0 +1,397 @@
+<!-- <header>
+    <app-header></app-header>
+    </header> -->
+    
+    <main>
+    
+        <div>
+            
+            <div class="container mt-5" style=" width:fit-content; justify-content: space-around;" >
+              <div style="display: flex; justify-content: space-between;">
+              <mat-form-field>
+                
+                  <mat-label>Search</mat-label>
+                  <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Umer" #input>
+                </mat-form-field>
+                <button  mat-raised-button color="primary" data-toggle="modal" data-target="#addUser">Add User</button>
+                <button  mat-raised-button color="primary" routerLink="/adminProduct">Get Product Details</button>
+              </div> 
+                <div class="mat-elevation-z8">
+                  <table mat-table [dataSource]="dataSource" matSort>
+                
+                 
+                
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="firstname">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > First Name </th>
+                      <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+                    </ng-container>
+                
+                    <!-- Salary Column -->
+                    <ng-container matColumnDef="lastname">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > Last Name </th>
+                      <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+                    </ng-container>
+                
+                    
+          
+                    <!-- Designation Column -->
+                    <ng-container matColumnDef="username">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > username</th>
+                      <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+                    </ng-container>
+    
+    
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header > Email </th>
+                        <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+                      </ng-container>
+    
+                    
+                      <ng-container matColumnDef="role">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header > Role </th>
+                        <td mat-cell *matCellDef="let row"> {{row.role}} </td>
+                      </ng-container>
+    
+    
+                      <ng-container matColumnDef="phonenumber">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header > Phone Number </th>
+                        <td mat-cell *matCellDef="let row"> {{row.phoneNumber}} </td>
+                      </ng-container>
+    
+                      <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header > Description </th>
+                        <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+                      </ng-container>
+    
+    
+    
+    
+    
+    
+              
+                    <!-- operation Column -->
+                    <ng-container matColumnDef="Operations">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header > Operations </th>
+                      <td mat-cell *matCellDef="let row">
+                        <button  mat-icon-button color="warn" aria-label="Example icon button with a delete icon" (click)="deleteUser(row)">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                      <button  mat-icon-button color="primary" aria-label="Example icon button with a open in new tab icon" data-toggle="modal" data-target="#updateUser" (click)="getUser(row)">
+                           <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </button>
+                      </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                      <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                  </table>
+                
+                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                </div>
+                
+              </div>
+            </div>
+    
+    
+            
+    
+    
+    
+    
+    
+    </main>
+    
+    <!-- <footer>
+    
+    <app-footer></app-footer>
+    </footer> -->
+    
+    
+    
+          <!--add User model-->
+          <!-- Modal -->
+          <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <form #addEmployeedetails="ngForm" >
+                        <div class="row">
+                            <div class="col-md-6" >
+                                <div class="example-container" >
+    
+                                    <!-- <mat-form-field appearance="fill" style="width: 29rem">
+                                        <mat-label>Enter Id</mat-label>
+                                        <input matInput type="number" name="id" required [(ngModel)] =Bindingproduct.id >
+                                       
+                                      </mat-form-field> -->
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter First Name</mat-label>
+                                      <input matInput name="name" required [(ngModel)] =user.FirstName >
+                                     
+                                    </mat-form-field>
+                                    
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Last Name </mat-label>
+                                      <input matInput type="text" name="Category"  required [(ngModel)] =user.LastName>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Username</mat-label>
+                                      <input matInput type="text"  name="image" required [(ngModel)] =user.Username>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Email </mat-label>
+                                      <input matInput type="email"  name="password" required [(ngModel)] =user.Email>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    
+                                  </div>
+    
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter password </mat-label>
+                                      <input matInput type="password"  name="password" required [(ngModel)] =user.Password>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    
+                                  </div>
+    
+                                  <div class="example-container">
+        
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+              
+                                        <p class="mb-0 me-4">Role: </p>
+                      
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleUser"
+                                            value="User" [(ngModel)]="user.Role" />
+                                          <label  class="form-check-label" for="roleUser">User</label>
+                                        </div>
+                      
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                            value="Admin" [(ngModel)]="user.Role"/>
+                                          <label class="form-check-label" for="roleAdmin">Admin</label>
+                                        </div>
+                                    
+                                    </div>
+                                    
+                                  </div>
+    
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Phone Number </mat-label>
+                                      <input matInput type="text"  name="rating" required [(ngModel)] =user.PhoneNumber>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    
+                                  </div>
+    
+                                 
+    
+                                  
+                                  
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" data-dismiss="modal" class="btn btn-primary" (click)="addUser()">Submit</button>
+                          </div>
+                    </form>
+                    
+                  </div>
+                </div> 
+                
+              </div>
+            </div>
+          </div>
+    
+    
+    
+    
+    
+    
+          <!-- Update Employee model -->
+          <!-- Modal -->
+          <div class="modal fade" id="updateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                   
+                        <div>
+                          <form #updateEmployeedetails="ngForm" >
+                            <div class="row">
+                                <div class="col-md-6" >
+                                    <div class="example-container" >
+        
+                                        <!-- <mat-form-field appearance="fill" style="width: 29rem">
+                                            <mat-label>Enter Id</mat-label>
+                                            <input matInput type="number" name="id" required [(ngModel)] =Bindingproduct.id >
+                                           
+                                          </mat-form-field> -->
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter First Name</mat-label>
+                                          <input matInput name="name" required [(ngModel)] =user.FirstName [value]="tempuser.FirstName">
+                                         
+                                        </mat-form-field>
+                                        
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Last Name </mat-label>
+                                          <input matInput type="text" name="Category"  required [(ngModel)] =user.LastName [value]="tempuser.LirstName">
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Username</mat-label>
+                                          <input matInput type="text"  name="image" required [(ngModel)] =user.Username [value]="tempuser.Username">
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                        
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Email </mat-label>
+                                          <input matInput type="email"  name="password" required [(ngModel)] =user.Email [value]="tempuser.Email"  >
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                        
+                                        
+                                      </div>
+        
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter password </mat-label>
+                                          <input matInput type="password"  name="password" required [(ngModel)] =user.Password [value]="tempuser.Password" >
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                        
+                                        
+                                      </div>
+        
+                                      <div class="example-container">
+            
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                  
+                                            <p class="mb-0 me-4">Role: </p>
+                          
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleUser"
+                                                value="User" [(ngModel)]="user.Role" />
+                                              <label  class="form-check-label" for="roleUser">User</label>
+                                            </div>
+                          
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                                value="Admin" [(ngModel)]="user.Role"/>
+                                              <label class="form-check-label" for="roleAdmin">Admin</label>
+                                            </div>
+                                        
+                                        </div>
+                                        
+                                      </div>
+        
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Phone Number </mat-label>
+                                          <input matInput type="text"  name="rating" required [(ngModel)] =user.PhoneNumber [value]="tempuser.PhoneNumber">
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                        
+                                        
+                                      </div>
+        
+                                     
+        
+                                      
+                                  </div>    
+                                </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="updateUser()" >Submit</button>
+                                </div>
+                          </form>
+                          
+                        </div>
+                      
+                </div>
+               
+              </div>
+            </div>
+          </div>
+          
+    
+    
+         
+          
+    
+    

@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-section {
+    background-color: #f5f0f0;
+  }
+  
+  .login-card {
+    border-radius: 1rem;
+  }
+  
+  .login-image {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-image img {
+    border-radius: 1rem 0 0 1rem;
+  }
+  
+  .logo-icon {
+    color: #ff6219;
+  }
+  
+  .login-heading {
+    letter-spacing: 1px;
+  }
+  
+  .register-text {
+    color: #393f81;
+  }
+  
+  .register-text a {
+    color: #393f81;
+    text-decoration: none;
+  }
+  
+  .register-text a:hover {
+    text-decoration: underline;
+  }
+button {
+    font-weight: 500;
+   font-size: 0.875rem;
+   padding: 2px 168px; 
+   height :50px; 
+   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #183153;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: none;
+ 
+ }
+ 
+ button:after{
+ 
+   content: " ";
+  width: 0%;
+  height: 100%;
+  background: #FFD401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+ 
+ 
+ }
+ 
+ 
+  button:hover::after{
+ 
+   right: auto;
+   left: 0;
+   width: 100%;
+ }
+ 
+  button span{
+ text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+ }
+ button span:hover{
+ color: #183153;
+  animation: scaleUp 0.3s ease-in-out;
+ }
+ 
+ 
+ 
+ 
+ @keyframes scaleUp {
+   0% {
+    transform: scale(1);
+   }
+  
+   50% {
+    transform: scale(0.95);
+   }
+  
+   100% {
+    transform: scale(1);
+   }
+  }
+
+  .container-mt5 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .center-text {
+    text-align: center;
+
+
+  }
+  
+  .text-color {
+    color: #183153;
+    font-size: 36px;
+  font-weight: bold;
+  }

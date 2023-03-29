@@ -1,0 +1,333 @@
+<!-- <header>
+    <app-header></app-header>
+</header> -->
+
+<main>
+    <div>
+        
+        <div class="container mt-5" style=" width:fit-content; justify-content: space-around;" >
+          <div style="display: flex; justify-content: space-between;">
+          <mat-form-field>
+            
+              <mat-label>Search</mat-label>
+              <input  matInput (keyup)="applyFilter($event)" placeholder="Ex. Umer" #input>
+            </mat-form-field>
+            <button  mat-raised-button color="primary" data-toggle="modal" data-target="#addUser">Add Product</button>
+            <button  mat-raised-button color="primary" routerLink="/dashboard">Get User Details</button>
+          </div> 
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+            
+             
+            
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > Product Name </th>
+                  <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+                </ng-container>
+            
+                <!-- Salary Column -->
+                <ng-container matColumnDef="description">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > Product Description</th>
+                  <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+                </ng-container>
+            
+                
+      
+                <!-- Designation Column -->
+                <!-- <ng-container matColumnDef="categoryId">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > Product Category Id</th>
+                  <td mat-cell *matCellDef="let row"> {{category}} </td>
+                </ng-container> -->
+    
+    
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header > Price </th>
+                    <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+                  </ng-container>
+    
+                
+                 
+    
+    
+    
+    
+    
+    
+          
+                <!-- operation Column -->
+                <ng-container matColumnDef="Operations">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header > Operations </th>
+                  <td mat-cell *matCellDef="let row">
+                    <button  mat-icon-button color="warn" aria-label="Example icon button with a delete icon" (click)="deleteProduct(row)">
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  <button  mat-icon-button color="primary" aria-label="Example icon button with a open in new tab icon" data-toggle="modal" data-target="#updateUser" (click)="getProduct(row)">
+                       <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            </div>
+            
+          </div>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+        <!--add User model-->
+          <!-- Modal -->
+          <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <form #addEmployeedetails="ngForm" >
+                        <div class="row">
+                            <div class="col-md-6" >
+                                <div class="example-container" >
+    
+                                    
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Product Name</mat-label>
+                                      <input matInput name="name" required [(ngModel)] =myProduct.name >
+                                     
+                                    </mat-form-field>
+                                    
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Description </mat-label>
+                                      <input matInput type="text" name="Category"  required [(ngModel)] =myProduct.description>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+              
+                                        <p class="mb-0 me-4">Category: </p>
+                      
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleUser"
+                                            value=1 [(ngModel)]="myProduct.categoryId" />
+                                          <label  class="form-check-label" for="roleUser">Phones</label>
+                                        </div>
+                      
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                            value=2 [(ngModel)]="myProduct.categoryId"/>
+                                          <label class="form-check-label" for="roleAdmin">Laptops</label>
+                                        </div>
+    
+                                        <div class="form-check form-check-inline mb-0 me-4">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                              value=3 [(ngModel)]="myProduct.categoryId"/>
+                                            <label class="form-check-label" for="roleAdmin">Cloths</label>
+                                          </div>
+    
+                                          <div class="form-check form-check-inline mb-0 me-4">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                              value=4 [(ngModel)]="myProduct.categoryId"/>
+                                            <label class="form-check-label" for="roleAdmin">Food</label>
+                                          </div>
+    
+                                          <!-- <div class="form-check form-check-inline mb-0 me-4">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                              value=5 [(ngModel)]="myProduct.categoryId"/>
+                                            <label class="form-check-label" for="roleAdmin">Shoes</label>
+                                          </div> -->
+                                    
+                                    </div>
+                                    
+                                  </div>
+                                  <div class="example-container">
+        
+                                    <mat-form-field appearance="fill" style="width: 29rem">
+                                      <mat-label>Enter Price </mat-label>
+                                      <input matInput type="email"  name="password" required [(ngModel)] =myProduct.price>
+                                      
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    
+                                  </div>
+    
+                                  
+    
+                                  
+    
+                                  
+    
+                                 
+    
+                                  
+                                  
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" data-dismiss="modal" class="btn btn-primary" (click)="addProduct()" >Submit</button>
+                          </div>
+                    </form>
+                    
+                  </div>
+                </div> 
+                
+              </div>
+            </div>
+          </div>
+    
+    
+    <!-- Update Employee model -->
+          <!-- Modal -->
+          <div class="modal fade" id="updateUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                   
+                        <div>
+                          <form #updateEmployeedetails="ngForm" >
+                            <div class="row">
+                                <div class="col-md-6" >
+                                    <div class="example-container" >
+        
+                                        
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Product Name</mat-label> 
+                                          <input matInput name="name" required [(ngModel)] =myProduct.name [value]="tempProduct.name">
+                                         
+                                        </mat-form-field>
+                                        
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Description </mat-label>
+                                          <input matInput type="text" name="Category"  required [(ngModel)] =myProduct.description value="{{tempProduct.description}}">
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                  
+                                            <p class="mb-0 me-4">Category: </p>
+                          
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleUser"
+                                                value=1 [(ngModel)]="myProduct.categoryId" />
+                                              <label  class="form-check-label" for="roleUser">Phones</label>
+                                            </div>
+                          
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                                value=2 [(ngModel)]="myProduct.categoryId"/>
+                                              <label class="form-check-label" for="roleAdmin">Laptops</label>
+                                            </div>
+        
+                                            <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                                  value=3 [(ngModel)]="myProduct.categoryId"/>
+                                                <label class="form-check-label" for="roleAdmin">Cloths</label>
+                                              </div>
+        
+                                              <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                                  value=4 [(ngModel)]="myProduct.categoryId"/>
+                                                <label class="form-check-label" for="roleAdmin">Food</label>
+                                              </div>
+        
+                                              <div class="form-check form-check-inline mb-0 me-4">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="roleAdmin"
+                                                  value=5 [(ngModel)]="myProduct.categoryId"/>
+                                                <label class="form-check-label" for="roleAdmin">Shoes</label>
+                                              </div>
+                                        
+                                        </div>
+                                        
+                                      </div>
+                                      <div class="example-container">
+            
+                                        <mat-form-field appearance="fill" style="width: 29rem">
+                                          <mat-label>Enter Price </mat-label>
+                                          <input matInput type="email"  name="password" required [(ngModel)] =myProduct.price [value]="tempProduct.price">
+                                          
+                                        </mat-form-field>
+                                        
+                                        
+                                        
+                                        
+                                      </div>
+        
+                                      
+        
+                                      
+        
+                                      
+        
+                                     
+        
+                                      
+                                      
+                                </div>
+                                
+                            </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="updateProduct()">Submit</button>
+                                </div>
+                          </form>
+                          
+                        </div>
+                      
+                </div>
+               
+              </div>
+            </div>
+          </div>
+          
+    
+    
+</main>
+
+<!-- <footer>
+    <app-footer></app-footer>
+</footer> -->

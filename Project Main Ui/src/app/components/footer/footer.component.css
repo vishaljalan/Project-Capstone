@@ -1,0 +1,20 @@
+footer {
+    background-color: #1b1b1b;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  
+  footer p {
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .container {
+    padding: 0 15px;
+    max-width: 1170px;
+    margin: 0 auto;
+  }

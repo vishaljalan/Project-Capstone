@@ -1,0 +1,210 @@
+/* 
+header {
+    overflow: hidden;
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .navbar a:hover {
+    color: #e60073;
+  }
+  
+  
+  .active {
+    color: #e60073;
+    border-bottom: 2px solid #e60073;
+  }
+  
+
+  .search-container {
+    float: right;
+  }
+  
+  .search-container input[type=text] {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 17px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    width: 200px;
+    margin-right: 16px;
+  }
+  
+  .search-container i {
+    
+    color: #e60073;
+    
+    cursor: pointer;
+    
+  }
+  
+
+  @media screen and (max-width: 600px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .search-container {
+      float: none;
+    }
+    .search-container input[type=text], .search-container button {
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+  }
+
+  .loginbutton button{
+    background-color: #e60073;
+    color: #f2f2f2;
+  } 
+
+  .loginbutton   :hover{
+    background-color: #f2f2f2;
+    color: #e60073;
+    border-color:#e60073 ;
+  } */
+
+  /* Reset browser default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style the header container */
+header {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+}
+
+/* Style the brand logo */
+header .navbar-brand {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Style the navigation links */
+header .nav-item .nav-link {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+/* Style the navigation links on hover */
+header .nav-item .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Add this to your CSS */
+header .d-flex {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style the username text */
+header .d-flex span {
+  color: #fff;
+  align-self: center;
+}
+
+/* Style the buttons */
+header .d-flex button {
+   font-weight: 500;
+  font-size: 0.875rem;
+  padding: 4px 12px;  
+  position: relative;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5px;
+ background: #183153;
+ font-family: "Montserrat", sans-serif;
+ box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+ overflow: hidden;
+ border: none;
+
+}
+
+header .d-flex button:after{
+
+  content: " ";
+ width: 0%;
+ height: 100%;
+ background: #FFD401;
+ position: absolute;
+ transition: all 0.4s ease-in-out;
+ right: 0;
+
+
+}
+
+
+header .d-flex button:hover::after{
+
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+header .d-flex button span{
+text-align: center;
+ text-decoration: none;
+ width: 100%;
+ padding: 18px 25px;
+ color: #fff;
+ font-size: 1.125em;
+ font-weight: 700;
+ letter-spacing: 0.3em;
+ z-index: 20;
+ transition: all 0.3s ease-in-out;
+}
+
+header .d-flex button span:hover{
+color: #183153;
+ animation: scaleUp 0.3s ease-in-out;
+}
+
+
+
+
+@keyframes scaleUp {
+  0% {
+   transform: scale(1);
+  }
+ 
+  50% {
+   transform: scale(0.95);
+  }
+ 
+  100% {
+   transform: scale(1);
+  }
+ }
+
+ .fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}

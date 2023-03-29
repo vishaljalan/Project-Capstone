@@ -1,0 +1,24 @@
+<!-- <main>
+  <div class="product-container">
+      <div class="image-gallery">
+          <div class="main-image">
+              <img [src]="mainImage" alt="Main Image">
+          </div>
+          <div class="small-images">
+              <img *ngFor="let smallImage of smallImages" [src]="smallImage" alt="Small Image" class="small-image" (click)="onSmallImageClick(smallImage)">
+          </div>
+      </div>
+      <div class="product-details">
+          <h2>{{ product.name }}</h2>
+          <p>A great Product</p>
+          <p>{{ product.price | currency:'INR' }}</p>
+          <div class="button-container">
+              <button class="add-to-cart-button" (click)="addToCart(product.productId, product.price)" [hidden]="!loginstatus">Add to Cart</button>
+              <button class="add-to-cart-button" routerLink="/login" [hidden]="loginstatus">Login to continue</button>
+          </div>
+      </div>
+  </div>
+  <div *ngIf="!product" class="loading-container">
+      <p>Loading product...</p>
+  </div>
+</main> -->

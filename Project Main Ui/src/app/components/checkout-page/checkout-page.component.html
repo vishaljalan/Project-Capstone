@@ -1,0 +1,50 @@
+<div class="container">
+  <form #OrderForm="ngForm" (ngSubmit)="placeOrder()" class="order-form">
+    <h2 class="form-title">Checkout Details</h2>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input type="text" name="name" class="form-control" id="fullName" placeholder="Enter your full name" [(ngModel)]="order.name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" [(ngModel)]="order.email">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea class="form-control" name="address" id="address" rows="3" [(ngModel)]="order.address"></textarea>
+    </div>
+
+    <div class="card order-summary my-4">
+      <div class="card-body">
+        <h5 class="card-title">Order Summary</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of getUniqueProducts()">
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{getQuantity(product)}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td>{{ usercart.totalPrice | currency:'INR':'symbol-narrow':'2.2-2' }}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-dark" type="submit">Place Order</button>
+    </div>
+  </form>
+</div>

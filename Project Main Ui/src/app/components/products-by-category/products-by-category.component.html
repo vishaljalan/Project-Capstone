@@ -1,0 +1,44 @@
+ 
+      <div id="products" >
+        
+
+
+        <div  class="card-container">
+        <div *ngFor="let product of productList" style="margin-right: 1rem;">
+          <mat-card class="example-card">
+              
+              <img mat-card-image src="https://source.unsplash.com/random/500x500?{{product.name}}" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                  <div>
+                      <h2>
+                          {{product.name}}
+                      </h2>
+                     
+                  </div>
+                  <div>
+                      <p>
+                          Description
+                      </p>
+                      
+                  </div>
+                <div>
+                  <h3 class="text-success"> {{product.price | currency:'INR'}}
+                      
+                      
+                  </h3>
+                  
+                 
+                </div>
+                
+              </mat-card-content>
+              <mat-card-actions >
+                  <div> 
+                <button mat-raised-button class="btn-outline-success" [routerLink]="['/products',product.productId]">View Product</button>
+              </div>
+              </mat-card-actions>
+             
+            </mat-card>
+            
+          </div>
+        </div>
+      </div>
